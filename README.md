@@ -8,4 +8,3 @@ Models to try
 2. YoloNet v whatever is the highest
 3. YoloNas
 4. (Reach) transformers
-
