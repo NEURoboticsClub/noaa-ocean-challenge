@@ -1,0 +1,12 @@
+names:
+- brittle_sea_star
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: starfish_ofishal
+  url: https://universe.roboflow.com/starfishofishal/starfish_ofishal/dataset/3
+  version: 3
+  workspace: starfishofishal
+test: ../test/images
+train: starfish_ofishal-3/train/images
+val: starfish_ofishal-3/valid/images

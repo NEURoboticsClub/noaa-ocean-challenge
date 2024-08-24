@@ -1,0 +1,6 @@
+[2024-08-24 16:05:17] DEBUG - matplotlib - matplotlib data path: C:\Users\Nikolas Sanderson\Documents\GitHub\Python-Visual\noaa-ocean-challenge\.venv\lib\site-packages\matplotlib\mpl-data
+[2024-08-24 16:05:17] DEBUG - matplotlib - CONFIGDIR=C:\Users\Nikolas Sanderson\.matplotlib
+[2024-08-24 16:05:17] DEBUG - matplotlib - interactive is False
+[2024-08-24 16:05:17] DEBUG - matplotlib - platform is win32
+[2024-08-24 16:05:17] DEBUG - matplotlib - CACHEDIR=C:\Users\Nikolas Sanderson\.matplotlib
+[2024-08-24 16:05:17] DEBUG - matplotlib.font_manager - Using fontManager instance from C:\Users\Nikolas Sanderson\.matplotlib\fontlist-v390.json

@@ -1,0 +1,12 @@
+names:
+- brittle-stars
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: noaa-nhxc9
+  url: https://universe.roboflow.com/aquaphoton-ufis0/noaa-nhxc9/dataset/3
+  version: 3
+  workspace: aquaphoton-ufis0
+test: ../test/images
+train: NOAA-3/train/images
+val: NOAA-3/valid/images

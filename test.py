@@ -14,8 +14,6 @@ model = models.get(MODEL_ARCH, pretrained_weights="coco").to(DEVICE)
 import roboflow
 from roboflow import Roboflow
 
-roboflow.login()
-
 rf = Roboflow(api_key="FJrZK2nFqdBYKfkx6xb0")
 project = rf.workspace("aquaphoton-ufis0").project("noaa-nhxc9")
 version = project.version(3)

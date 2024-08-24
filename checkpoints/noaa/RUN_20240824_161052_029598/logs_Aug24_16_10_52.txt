@@ -1,0 +1,110 @@
+[2024-08-24 16:08:37] INFO - super_gradients.common.crash_handler.crash_tips_setup - Crash tips is enabled. You can set your environment variable to CRASH_HANDLER=FALSE to disable it
+[2024-08-24 16:08:39] DEBUG - matplotlib - matplotlib data path: c:\Users\Nikolas Sanderson\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\mpl-data
+[2024-08-24 16:08:39] DEBUG - matplotlib - CONFIGDIR=C:\Users\Nikolas Sanderson\.matplotlib
+[2024-08-24 16:08:39] DEBUG - matplotlib - interactive is False
+[2024-08-24 16:08:39] DEBUG - matplotlib - platform is win32
+[2024-08-24 16:08:39] DEBUG - matplotlib - CACHEDIR=C:\Users\Nikolas Sanderson\.matplotlib
+[2024-08-24 16:08:39] DEBUG - matplotlib.font_manager - Using fontManager instance from C:\Users\Nikolas Sanderson\.matplotlib\fontlist-v390.json
+[2024-08-24 16:08:39] DEBUG - super_gradients.common.sg_loggers.clearml_sg_logger - Failed to import clearml
+[2024-08-24 16:08:42] DEBUG - hydra.core.utils - Setting JobRuntime:name=UNKNOWN_NAME
+[2024-08-24 16:08:42] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:08:42] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:08:44] WARNING - super_gradients.sanity_check.env_sanity_check - [31mFailed to verify operating system: Deci officially supports only Linux kernels. Some features may not work as expected.[0m
+[2024-08-24 16:08:44] INFO - super_gradients.sanity_check.env_sanity_check - Library check is not supported when super_gradients installed through "git+https://github.com/..." command
+[2024-08-24 16:08:44] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:08:44] WARNING - super_gradients.training.utils.checkpoint_utils - :warning: The pre-trained models provided by SuperGradients may have their own licenses or terms and conditions derived from the dataset used for pre-training.
+ It is your responsibility to determine whether you have permission to use the models for your use case.
+ The model you have requested was pre-trained on the coco dataset, published under the following terms: https://cocodataset.org/#termsofuse
+[2024-08-24 16:08:44] INFO - super_gradients.training.utils.checkpoint_utils - License Notification: YOLO-NAS pre-trained weights are subjected to the specific license terms and conditions detailed in 
+https://github.com/Deci-AI/super-gradients/blob/master/LICENSE.YOLONAS.md
+By downloading the pre-trained weight files you agree to comply with these terms.
+[2024-08-24 16:08:45] INFO - super_gradients.training.utils.checkpoint_utils - Successfully loaded pretrained weights for architecture yolo_nas_l
+[2024-08-24 16:08:45] DEBUG - super_gradients.training.utils.checkpoint_utils - Trying to load preprocessing params from checkpoint. Preprocessing params in checkpoint: False. Model YoloNAS_L inherit HasPredict: True
+[2024-08-24 16:09:30] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:09:31] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:09:31] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:09:31] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:09:31] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:09:31] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:09:37] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:09:37] WARNING - super_gradients.training.utils.checkpoint_utils - :warning: The pre-trained models provided by SuperGradients may have their own licenses or terms and conditions derived from the dataset used for pre-training.
+ It is your responsibility to determine whether you have permission to use the models for your use case.
+ The model you have requested was pre-trained on the coco dataset, published under the following terms: https://cocodataset.org/#termsofuse
+[2024-08-24 16:09:37] INFO - super_gradients.training.utils.checkpoint_utils - License Notification: YOLO-NAS pre-trained weights are subjected to the specific license terms and conditions detailed in 
+https://github.com/Deci-AI/super-gradients/blob/master/LICENSE.YOLONAS.md
+By downloading the pre-trained weight files you agree to comply with these terms.
+[2024-08-24 16:09:37] INFO - super_gradients.training.utils.checkpoint_utils - Successfully loaded pretrained weights for architecture yolo_nas_l
+[2024-08-24 16:09:37] DEBUG - super_gradients.training.utils.checkpoint_utils - Trying to load preprocessing params from checkpoint. Preprocessing params in checkpoint: False. Model YoloNAS_L inherit HasPredict: True
+[2024-08-24 16:10:43] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:10:43] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:10:43] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:10:43] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:10:43] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:10:44] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:10:48] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:10:48] WARNING - super_gradients.training.utils.checkpoint_utils - :warning: The pre-trained models provided by SuperGradients may have their own licenses or terms and conditions derived from the dataset used for pre-training.
+ It is your responsibility to determine whether you have permission to use the models for your use case.
+ The model you have requested was pre-trained on the coco dataset, published under the following terms: https://cocodataset.org/#termsofuse
+[2024-08-24 16:10:48] INFO - super_gradients.training.utils.checkpoint_utils - License Notification: YOLO-NAS pre-trained weights are subjected to the specific license terms and conditions detailed in 
+https://github.com/Deci-AI/super-gradients/blob/master/LICENSE.YOLONAS.md
+By downloading the pre-trained weight files you agree to comply with these terms.
+[2024-08-24 16:10:49] INFO - super_gradients.training.utils.checkpoint_utils - Successfully loaded pretrained weights for architecture yolo_nas_l
+[2024-08-24 16:10:49] DEBUG - super_gradients.training.utils.checkpoint_utils - Trying to load preprocessing params from checkpoint. Preprocessing params in checkpoint: False. Model YoloNAS_L inherit HasPredict: True
+[2024-08-24 16:10:52] INFO - super_gradients.training.sg_trainer.sg_trainer - Starting a new run with `run_id=RUN_20240824_161052_029598`
+[2024-08-24 16:10:52] INFO - super_gradients.training.sg_trainer.sg_trainer - Checkpoints directory: c:\Users\Nikolas Sanderson\Documents\GitHub\Python-Visual\noaa-ocean-challenge/checkpoints\noaa\RUN_20240824_161052_029598
+[2024-08-24 16:10:52] INFO - super_gradients.training.sg_trainer.sg_trainer - Using EMA with params {'decay': 0.9, 'decay_type': 'threshold'}
+[2024-08-24 16:11:18] INFO - super_gradients.training.utils.sg_trainer_utils - TRAINING PARAMETERS:
+    - Mode:                         Single GPU
+    - Number of GPUs:               0          (0 available on the machine)
+    - Full dataset size:            453        (len(train_set))
+    - Batch size per GPU:           8          (batch_size)
+    - Batch Accumulate:             1          (batch_accumulate)
+    - Total batch size:             8          (num_gpus * batch_size)
+    - Effective Batch size:         8          (num_gpus * batch_size * batch_accumulate)
+    - Iterations per epoch:         56         (len(train_loader))
+    - Gradient updates per epoch:   56         (len(train_loader) / batch_accumulate)
+    - Model: YoloNAS_L  (66.91M parameters, 66.91M optimized)
+    - Learning Rates and Weight Decays:
+      - default: (66.91M parameters). LR: 0.0005 (66.91M parameters) WD: 0.0, (84.69K parameters), WD: 0.0001, (66.82M parameters)
+
+[2024-08-24 16:11:18] INFO - super_gradients.training.sg_trainer.sg_trainer - Started training for 250 epochs (0/249)
+
+[2024-08-24 16:17:38] INFO - super_gradients.training.sg_trainer.sg_trainer - 
+[MODEL TRAINING EXECUTION HAS BEEN INTERRUPTED]... Please wait until SOFT-TERMINATION process finishes and saves all of the Model Checkpoints and log files before terminating...
+[2024-08-24 16:17:38] INFO - super_gradients.training.sg_trainer.sg_trainer - For HARD Termination - Stop the process again
+[2024-08-24 16:17:38] INFO - super_gradients.common.sg_loggers.base_sg_logger - [CLEANUP] - Successfully stopped system monitoring process
+[2024-08-24 16:17:44] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.roboflow.com:443
+[2024-08-24 16:17:44] DEBUG - urllib3.connectionpool - https://api.roboflow.com:443 "POST /?api_key=FJrZK2nFqdBYKfkx6xb0 HTTP/11" 200 179
+[2024-08-24 16:17:44] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.roboflow.com:443
+[2024-08-24 16:17:44] DEBUG - urllib3.connectionpool - https://api.roboflow.com:443 "GET /starfishofishal?api_key=FJrZK2nFqdBYKfkx6xb0 HTTP/11" 200 1501
+[2024-08-24 16:17:44] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.roboflow.com:443
+[2024-08-24 16:17:45] DEBUG - urllib3.connectionpool - https://api.roboflow.com:443 "GET /starfishofishal/starfish_ofishal?api_key=FJrZK2nFqdBYKfkx6xb0 HTTP/11" 200 4205
+[2024-08-24 16:17:45] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.roboflow.com:443
+[2024-08-24 16:17:45] DEBUG - urllib3.connectionpool - https://api.roboflow.com:443 "GET /starfishofishal/starfish_ofishal?api_key=FJrZK2nFqdBYKfkx6xb0 HTTP/11" 200 4205
+[2024-08-24 16:17:45] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.roboflow.com:443
+[2024-08-24 16:17:45] DEBUG - urllib3.connectionpool - https://api.roboflow.com:443 "GET /starfishofishal/starfish_ofishal/3?api_key=FJrZK2nFqdBYKfkx6xb0 HTTP/11" 200 138477
+[2024-08-24 16:17:45] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.roboflow.com:443
+[2024-08-24 16:17:46] DEBUG - urllib3.connectionpool - https://api.roboflow.com:443 "GET /starfishofishal/starfish_ofishal/3?nocache=true&api_key=FJrZK2nFqdBYKfkx6xb0 HTTP/11" 200 138477
+[2024-08-24 16:17:46] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.roboflow.com:443
+[2024-08-24 16:17:46] DEBUG - urllib3.connectionpool - https://api.roboflow.com:443 "GET /starfishofishal/starfish_ofishal/3/yolov5pytorch?api_key=FJrZK2nFqdBYKfkx6xb0 HTTP/11" 200 2167
+[2024-08-24 16:17:46] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): app.roboflow.com:443
+[2024-08-24 16:17:46] DEBUG - urllib3.connectionpool - https://app.roboflow.com:443 "GET /ds/3imAvGvCfT?key=MYePUpvjDN HTTP/11" 302 902
+[2024-08-24 16:17:46] DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): storage.googleapis.com:443
+[2024-08-24 16:17:46] DEBUG - urllib3.connectionpool - https://storage.googleapis.com:443 "GET /roboflow-platform-regional-exports/2cLPBjtOBdftHaQcCqlO/gMSvcAfJtNFSnGspEFPR/3/yolov5pytorch.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=481589474394-compute%40developer.gserviceaccount.com%2F20240824%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240824T201747Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=916cba83f6724d09c3869e06c69fe43917aae23315d0615d52587a4761ab0e30f450129fc3833e7141e609121d1ae9d6b7c868ff3b5c23f94945c1d9e7872a487807c4649961702e03cb04a9213c8a45e79402f9515fd01c14af37a73d3becbdb4b17457245616cf79322d77df0d237cbfdffde3502a64c9834861e2cf387d0e767909178e8cb5d5a2637d065ba3959f308706a9ad8ed09538c7e0d5e20ea5b93c9f60373a0161e97b65f965ef07182c7541e466449602911408bf8fcba188e5142f114944e39cdecd6d8ad08639ca5e92ce5cff9985ea93f354320958f8a9b97e47fe32a45e43b26cdf0ecfad9cd721870ee115b127e1c4bbdd7a66408c76b0 HTTP/11" 200 44793964
+[2024-08-24 16:18:00] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:18:00] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:18:01] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:18:01] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:18:02] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:18:02] INFO - super_gradients.training.datasets.detection_datasets.detection_dataset - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
+[2024-08-24 16:18:05] DEBUG - hydra.core.utils - Setting JobRuntime:name=app
+[2024-08-24 16:18:06] WARNING - super_gradients.training.utils.checkpoint_utils - :warning: The pre-trained models provided by SuperGradients may have their own licenses or terms and conditions derived from the dataset used for pre-training.
+ It is your responsibility to determine whether you have permission to use the models for your use case.
+ The model you have requested was pre-trained on the coco dataset, published under the following terms: https://cocodataset.org/#termsofuse
+[2024-08-24 16:18:06] INFO - super_gradients.training.utils.checkpoint_utils - License Notification: YOLO-NAS pre-trained weights are subjected to the specific license terms and conditions detailed in 
+https://github.com/Deci-AI/super-gradients/blob/master/LICENSE.YOLONAS.md
+By downloading the pre-trained weight files you agree to comply with these terms.
+[2024-08-24 16:18:06] INFO - super_gradients.training.utils.checkpoint_utils - Successfully loaded pretrained weights for architecture yolo_nas_l
+[2024-08-24 16:18:06] DEBUG - super_gradients.training.utils.checkpoint_utils - Trying to load preprocessing params from checkpoint. Preprocessing params in checkpoint: False. Model YoloNAS_L inherit HasPredict: True
+[2024-08-24 16:18:12] INFO - super_gradients.training.sg_trainer.sg_trainer - Starting a new run with `run_id=RUN_20240824_161812_583068`
+[2024-08-24 16:18:12] INFO - super_gradients.training.sg_trainer.sg_trainer - Checkpoints directory: c:\Users\Nikolas Sanderson\Documents\GitHub\Python-Visual\noaa-ocean-challenge/checkpoints\starfish_ofishal\RUN_20240824_161812_583068
