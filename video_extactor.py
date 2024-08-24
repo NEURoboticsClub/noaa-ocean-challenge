@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import torchvision.transforms as T
-from PIL import Image
+from PIL import Image, ImageDraw
 from ultralytics import YOLO
 
 class FrameAnnotator():
@@ -18,7 +18,6 @@ class FrameAnnotator():
        
         self.frame_rate = None
         
-
     def video_to_frames(self, filepath):
         """
         Converts a video to individual frames and saves it to self.frames
@@ -30,7 +29,7 @@ class FrameAnnotator():
         more_frames, img =  video.read()
         self.frame_rate = video.get(cv2.CAP_PROP_FPS)
         count = 0
-        while more_frames and count <= 21:
+        while more_frames and count <= 3:
             count += 1
             self.frames.append(img)
             more_frames, img = video.read()
@@ -48,9 +47,17 @@ class FrameAnnotator():
         self.annotated_frames = []
         for frame in self.frames:
             # self.annotated_frames.append(self.model.predict(frame))
-            pred = self.model.predict(conf=0.25, source=frame)
-            print(pred)
-            self.annotated_frames.append(np.asarray(self.transform(Image.fromarray(frame))))
+            output = self.model.predict(conf=0.25, source=frame)
+            predictions = output[0].boxes.xyxy
+            for pred in predictions:
+                x1 = pred[0]
+                y1 = pred[1]
+                x2 = pred[2]
+                y2 = pred[3]
+                annotated_frame = Image.fromarray(frame)
+                draw = ImageDraw.Draw(annotated_frame)
+                draw.rectangle([x1, y1, x2, y2], outline='red', width=3)
+                self.annotated_frames.append(np.asarray(self.transform(annotated_frame)))
 
     def reconstruct_video(self, filename):
         if len(self.annotated_frames) == 0:
