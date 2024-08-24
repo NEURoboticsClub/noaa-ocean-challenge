@@ -8,14 +8,7 @@ class FrameAnnotator():
     def __init__(self, model_path):
         self.frames = []
         self.annotated_frames = []
-
         self.model = YOLO(model_path)
-        
-        self.transform = T.Compose([
-            T.GaussianBlur(3),
-            T.RandomVerticalFlip(1)
-        ])
-       
         self.frame_rate = None
         
     def video_to_frames(self, filepath):
@@ -28,9 +21,7 @@ class FrameAnnotator():
         self.frames = []
         more_frames, img =  video.read()
         self.frame_rate = video.get(cv2.CAP_PROP_FPS)
-        count = 0
-        while more_frames and count <= 3:
-            count += 1
+        while more_frames:
             self.frames.append(img)
             more_frames, img = video.read()
  
@@ -49,15 +40,15 @@ class FrameAnnotator():
             # self.annotated_frames.append(self.model.predict(frame))
             output = self.model.predict(conf=0.25, source=frame)
             predictions = output[0].boxes.xyxy
+            annotated_frame = Image.fromarray(frame)
             for pred in predictions:
                 x1 = pred[0]
                 y1 = pred[1]
                 x2 = pred[2]
                 y2 = pred[3]
-                annotated_frame = Image.fromarray(frame)
                 draw = ImageDraw.Draw(annotated_frame)
                 draw.rectangle([x1, y1, x2, y2], outline='red', width=3)
-                self.annotated_frames.append(np.asarray(self.transform(annotated_frame)))
+            self.annotated_frames.append(np.asarray(annotated_frame))
 
     def reconstruct_video(self, filename):
         if len(self.annotated_frames) == 0:
