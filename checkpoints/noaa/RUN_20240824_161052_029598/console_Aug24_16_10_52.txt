@@ -1,82 +1,0 @@
-============================================================
-New run started at 2024-08-24.16:08:36.966444
-sys.argv: "C:\Users\Nikolas Sanderson\AppData\Roaming\Python\Python310\site-packages\ipykernel_launcher.py --f="c:\Users\Nikolas Sanderson\AppData\Roaming\jupyter\runtime\kernel-v2-13804o3EpwpvCXn0N.json""
-============================================================
-The console stream is logged into C:\Users\Nikolas Sanderson\sg_logs\console.log
-[WARNING]No module named 'pycocotools'
-
-Indexing dataset annotations:   0%|          | 0/453 [00:00<?, ?it/s]
-Indexing dataset annotations:  42%|████▏     | 191/453 [00:00<00:00, 1898.20it/s]
-Indexing dataset annotations:  84%|████████▍ | 381/453 [00:00<00:00, 1867.79it/s]
-Indexing dataset annotations: 100%|██████████| 453/453 [00:00<00:00, 1804.02it/s]
-
-Indexing dataset annotations:   0%|          | 0/110 [00:00<?, ?it/s]
-Indexing dataset annotations: 100%|██████████| 110/110 [00:00<00:00, 1884.23it/s]
-
-Indexing dataset annotations:   0%|          | 0/47 [00:00<?, ?it/s]
-Indexing dataset annotations: 100%|██████████| 47/47 [00:00<00:00, 1686.20it/s]
-
-Indexing dataset annotations:   0%|          | 0/453 [00:00<?, ?it/s]
-Indexing dataset annotations:  46%|████▋     | 210/453 [00:00<00:00, 2089.09it/s]
-Indexing dataset annotations:  92%|█████████▏| 419/453 [00:00<00:00, 2019.06it/s]
-Indexing dataset annotations: 100%|██████████| 453/453 [00:00<00:00, 2022.23it/s]
-
-Indexing dataset annotations:   0%|          | 0/110 [00:00<?, ?it/s]
-Indexing dataset annotations: 100%|██████████| 110/110 [00:00<00:00, 1904.14it/s]
-
-Indexing dataset annotations:   0%|          | 0/47 [00:00<?, ?it/s]
-Indexing dataset annotations: 100%|██████████| 47/47 [00:00<00:00, 1716.07it/s]
-The console stream is now moved to c:\Users\Nikolas Sanderson\Documents\GitHub\Python-Visual\noaa-ocean-challenge/checkpoints\noaa\RUN_20240824_161052_029598/console_Aug24_16_10_52.txt
-[2024-08-24 16:10:52] INFO - sg_trainer.py - Using EMA with params {'decay': 0.9, 'decay_type': 'threshold'}
-Object name `linear_epoch_step` is now deprecated. Please replace it with `LinearEpochLRWarmup`.
-initialize_param_groups and update_param_groups usages are deprecated since 3.4.0, will be removed in 3.5.0 and have no effect. 
- Assign different learning rates by passing a mapping of layer name prefixes to lr values through initial_lr training hyperparameter (i.e initial_lr={'backbone': 0.01, 'default':0.1})
-Mixed precision training is not supported on CPU. Disabling mixed precision. (i.e. `mixed_precision=False`)
-`torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
-[2024-08-24 16:11:18] INFO - sg_trainer_utils.py - TRAINING PARAMETERS:
-    - Mode:                         Single GPU
-    - Number of GPUs:               0          (0 available on the machine)
-    - Full dataset size:            453        (len(train_set))
-    - Batch size per GPU:           8          (batch_size)
-    - Batch Accumulate:             1          (batch_accumulate)
-    - Total batch size:             8          (num_gpus * batch_size)
-    - Effective Batch size:         8          (num_gpus * batch_size * batch_accumulate)
-    - Iterations per epoch:         56         (len(train_loader))
-    - Gradient updates per epoch:   56         (len(train_loader) / batch_accumulate)
-    - Model: YoloNAS_L  (66.91M parameters, 66.91M optimized)
-    - Learning Rates and Weight Decays:
-      - default: (66.91M parameters). LR: 0.0005 (66.91M parameters) WD: 0.0, (84.69K parameters), WD: 0.0001, (66.82M parameters)
-
-[2024-08-24 16:11:18] INFO - sg_trainer.py - Started training for 250 epochs (0/249)
-
-  0%|          | 0/56 [00:00<?, ?it/s]Train epoch 0:   0%|          | 0/56 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
-Train epoch 0:   0%|          | 0/56 [00:58<?, ?it/s, PPYoloELoss/loss=3.81, PPYoloELoss/loss_cls=1.32, PPYoloELoss/loss_dfl=0.936, PPYoloELoss/loss_iou=1.56, gpu_mem=0]Train epoch 0:   2%|▏         | 1/56 [00:58<53:42, 58.58s/it, PPYoloELoss/loss=3.81, PPYoloELoss/loss_cls=1.32, PPYoloELoss/loss_dfl=0.936, PPYoloELoss/loss_iou=1.56, gpu_mem=0]Train epoch 0:   2%|▏         | 1/56 [01:43<53:42, 58.58s/it, PPYoloELoss/loss=3.81, PPYoloELoss/loss_cls=1.3, PPYoloELoss/loss_dfl=0.931, PPYoloELoss/loss_iou=1.58, gpu_mem=0] Train epoch 0:   4%|▎         | 2/56 [01:43<45:31, 50.58s/it, PPYoloELoss/loss=3.81, PPYoloELoss/loss_cls=1.3, PPYoloELoss/loss_dfl=0.931, PPYoloELoss/loss_iou=1.58, gpu_mem=0]Train epoch 0:   4%|▎         | 2/56 [02:27<45:31, 50.58s/it, PPYoloELoss/loss=3.78, PPYoloELoss/loss_cls=1.32, PPYoloELoss/loss_dfl=0.914, PPYoloELoss/loss_iou=1.54, gpu_mem=0]Train epoch 0:   5%|▌         | 3/56 [02:27<42:04, 47.64s/it, PPYoloELoss/loss=3.78, PPYoloELoss/loss_cls=1.32, PPYoloELoss/loss_dfl=0.914, PPYoloELoss/loss_iou=1.54, gpu_mem=0]Train epoch 0:   5%|▌         | 3/56 [03:11<42:04, 47.64s/it, PPYoloELoss/loss=3.78, PPYoloELoss/loss_cls=1.34, PPYoloELoss/loss_dfl=0.916, PPYoloELoss/loss_iou=1.53, gpu_mem=0]Train epoch 0:   7%|▋         | 4/56 [03:11<40:07, 46.30s/it, PPYoloELoss/loss=3.78, PPYoloELoss/loss_cls=1.34, PPYoloELoss/loss_dfl=0.916, PPYoloELoss/loss_iou=1.53, gpu_mem=0]Train epoch 0:   7%|▋         | 4/56 [03:56<40:07, 46.30s/it, PPYoloELoss/loss=3.78, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.91, PPYoloELoss/loss_iou=1.54, gpu_mem=0] Train epoch 0:   9%|▉         | 5/56 [03:56<38:43, 45.55s/it, PPYoloELoss/loss=3.78, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.91, PPYoloELoss/loss_iou=1.54, gpu_mem=0]Train epoch 0:   9%|▉         | 5/56 [04:41<38:43, 45.55s/it, PPYoloELoss/loss=3.77, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.908, PPYoloELoss/loss_iou=1.54, gpu_mem=0]Train epoch 0:  11%|█         | 6/56 [04:41<37:51, 45.43s/it, PPYoloELoss/loss=3.77, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.908, PPYoloELoss/loss_iou=1.54, gpu_mem=0]Train epoch 0:  11%|█         | 6/56 [05:26<37:51, 45.43s/it, PPYoloELoss/loss=3.77, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.912, PPYoloELoss/loss_iou=1.53, gpu_mem=0]Train epoch 0:  12%|█▎        | 7/56 [05:26<37:06, 45.44s/it, PPYoloELoss/loss=3.77, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.912, PPYoloELoss/loss_iou=1.53, gpu_mem=0]Train epoch 0:  12%|█▎        | 7/56 [06:13<37:06, 45.44s/it, PPYoloELoss/loss=3.77, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.906, PPYoloELoss/loss_iou=1.54, gpu_mem=0]Train epoch 0:  14%|█▍        | 8/56 [06:13<36:36, 45.75s/it, PPYoloELoss/loss=3.77, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.906, PPYoloELoss/loss_iou=1.54, gpu_mem=0]Train epoch 0:  14%|█▍        | 8/56 [06:19<37:57, 47.44s/it, PPYoloELoss/loss=3.77, PPYoloELoss/loss_cls=1.33, PPYoloELoss/loss_dfl=0.906, PPYoloELoss/loss_iou=1.54, gpu_mem=0]
-[2024-08-24 16:17:38] INFO - sg_trainer.py - 
-[MODEL TRAINING EXECUTION HAS BEEN INTERRUPTED]... Please wait until SOFT-TERMINATION process finishes and saves all of the Model Checkpoints and log files before terminating...
-[2024-08-24 16:17:38] INFO - sg_trainer.py - For HARD Termination - Stop the process again
-[2024-08-24 16:17:38] INFO - base_sg_logger.py - [CLEANUP] - Successfully stopped system monitoring process
-This is now an optional IPython functionality, setting dhist requires you to install the `pickleshare` library.
-c:\Users\Nikolas Sanderson\Documents\GitHub\Python-Visual\noaa-ocean-challenge
-loading Roboflow workspace...
-loading Roboflow project...
-Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::   0%|          | 0/43745 [00:00<?, ?it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::   0%|          | 175/43745 [00:00<00:26, 1637.79it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::   5%|▍         | 2015/43745 [00:00<00:03, 10664.60it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  13%|█▎        | 5864/43745 [00:00<00:01, 22652.79it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  25%|██▌       | 10960/43745 [00:00<00:00, 33035.33it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  34%|███▍      | 15004/43745 [00:00<00:00, 35615.92it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  44%|████▎     | 19078/43745 [00:00<00:00, 37292.98it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  53%|█████▎    | 23147/43745 [00:00<00:00, 38361.85it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  62%|██████▏   | 27227/43745 [00:00<00:00, 39061.55it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  72%|███████▏  | 31424/43745 [00:00<00:00, 39514.66it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  81%|████████  | 35383/43745 [00:01<00:00, 38570.37it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch::  92%|█████████▏| 40406/43745 [00:01<00:00, 41805.57it/s]Downloading Dataset Version Zip in starfish_ofishal-3 to yolov5pytorch:: 100%|██████████| 43745/43745 [00:01<00:00, 36014.25it/s]
-
-Extracting Dataset Version Zip to starfish_ofishal-3 in yolov5pytorch::   0%|          | 0/272 [00:00<?, ?it/s]Extracting Dataset Version Zip to starfish_ofishal-3 in yolov5pytorch::  50%|█████     | 136/272 [00:00<00:00, 1348.56it/s]Extracting Dataset Version Zip to starfish_ofishal-3 in yolov5pytorch:: 100%|██████████| 272/272 [00:00<00:00, 1623.32it/s]
-location: c:\Users\Nikolas Sanderson\Documents\GitHub\Python-Visual\noaa-ocean-challenge\starfish_ofishal-3
-classes: ['brittle_sea_star']
-[2024-08-24 16:18:00] INFO - detection_dataset.py - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
-Indexing dataset annotations:   0%|          | 0/110 [00:00<?, ?it/s]Indexing dataset annotations:   7%|▋         | 8/110 [00:00<00:01, 77.18it/s]Indexing dataset annotations:  16%|█▋        | 18/110 [00:00<00:01, 90.34it/s]Indexing dataset annotations:  25%|██▌       | 28/110 [00:00<00:00, 93.19it/s]Indexing dataset annotations:  35%|███▍      | 38/110 [00:00<00:00, 91.87it/s]Indexing dataset annotations:  45%|████▍     | 49/110 [00:00<00:00, 95.16it/s]Indexing dataset annotations:  54%|█████▎    | 59/110 [00:00<00:00, 95.75it/s]Indexing dataset annotations:  63%|██████▎   | 69/110 [00:00<00:00, 96.17it/s]Indexing dataset annotations:  72%|███████▏  | 79/110 [00:00<00:00, 95.23it/s]Indexing dataset annotations:  82%|████████▏ | 90/110 [00:00<00:00, 98.23it/s]Indexing dataset annotations:  92%|█████████▏| 101/110 [00:01<00:00, 99.07it/s]Indexing dataset annotations: 100%|██████████| 110/110 [00:01<00:00, 95.99it/s]
-[2024-08-24 16:18:01] INFO - detection_dataset.py - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
-Indexing dataset annotations:   0%|          | 0/13 [00:00<?, ?it/s]Indexing dataset annotations:  77%|███████▋  | 10/13 [00:00<00:00, 97.03it/s]Indexing dataset annotations: 100%|██████████| 13/13 [00:00<00:00, 97.42it/s]
-[2024-08-24 16:18:02] INFO - detection_dataset.py - Dataset Initialization in progress. `cache_annotations=True` causes the process to take longer due to full dataset indexing.
-Indexing dataset annotations:   0%|          | 0/7 [00:00<?, ?it/s]Indexing dataset annotations: 100%|██████████| 7/7 [00:00<00:00, 103.74it/s]
-[2024-08-24 16:18:06] WARNING - checkpoint_utils.py - :warning: The pre-trained models provided by SuperGradients may have their own licenses or terms and conditions derived from the dataset used for pre-training.
- It is your responsibility to determine whether you have permission to use the models for your use case.
- The model you have requested was pre-trained on the coco dataset, published under the following terms: https://cocodataset.org/#termsofuse
-[2024-08-24 16:18:06] INFO - checkpoint_utils.py - License Notification: YOLO-NAS pre-trained weights are subjected to the specific license terms and conditions detailed in 
-https://github.com/Deci-AI/super-gradients/blob/master/LICENSE.YOLONAS.md
-By downloading the pre-trained weight files you agree to comply with these terms.
-[2024-08-24 16:18:06] INFO - checkpoint_utils.py - Successfully loaded pretrained weights for architecture yolo_nas_l
-A reg_max argument is not needed for PPYoloE loss anymore. It is deprecated since SG 3.6.0 and will be removed in the SG 3.8.0.You can safely omit this argument as it is not used anymore and we infer it automatically from model's outputs
-[2024-08-24 16:18:12] INFO - sg_trainer.py - Starting a new run with `run_id=RUN_20240824_161812_583068`
-[2024-08-24 16:18:12] INFO - sg_trainer.py - Checkpoints directory: c:\Users\Nikolas Sanderson\Documents\GitHub\Python-Visual\noaa-ocean-challenge/checkpoints\starfish_ofishal\RUN_20240824_161812_583068
