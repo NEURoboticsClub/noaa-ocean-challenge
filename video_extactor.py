@@ -40,8 +40,7 @@ class FrameAnnotator():
             raise Exception("No frames loaded")
         self.annotated_frames = []
         for frame in self.frames:
-            self.annotated_frames.append(np.asarray(
-                self.annotate_single_frame(frame)[0]))
+            self.annotated_frames.append(self.annotate_single_frame(frame)[0])
 
     def annotate_single_frame(self, frame):
         # classes 0 is only sea stars
@@ -60,15 +59,15 @@ class FrameAnnotator():
 
     def reconstruct_video(self, filename, annotated_frames):
         if annotated_frames is None:
-            annotated_frames = self.annotate_frames
-        if len(self.annotated_frames) == 0:
+            annotated_frames = self.annotated_frames
+        if len(annotated_frames) == 0:
             raise Exception("No frames annotated")
         size = (self.frames[0].shape[1], self.frames[0].shape[0])
         writer = cv2.VideoWriter(filename, cv2.VideoWriter_fourcc(*"mp4v"),
                                  self.frame_rate, size)
 
-        for frame in self.annotated_frames:
-            writer.write(frame)
+        for frame in annotated_frames:
+            writer.write(np.asarray(frame))
 
         writer.release()
 

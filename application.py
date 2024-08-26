@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 from video_extactor import FrameAnnotator
 from PIL import ImageTk, Image
 import threading
@@ -147,11 +147,9 @@ class GUIApp:
                                     + padding_seconds + f"{seconds:.3f}"]
                                     * self.pred_lengths[i]))
 
-        # to swap from YOLONAS output to specified ouput columns
-        print(name_column.shape)
-        print(np_pred.shape)
         np_pred = np.append(name_column.reshape(
             (len(name_column), 1)), np_pred, axis=1)
+        # to swap from YOLONAS output to specified ouput columns
         np_pred[:, [3, 2]] = np_pred[:, [2, 3]]
         np_pred[:, [3, 4]] = np_pred[:, [4, 3]]
         labels = np.array(["Current Frame", "X Bound, Left",
