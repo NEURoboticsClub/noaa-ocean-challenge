@@ -27,3 +27,5 @@ Once in the repo, in the terminal run the following command:
 >```
 > python3 application.py
 >```
+
+For full documentation, read [here](https://docs.google.com/document/d/18vlL5v7BBmYG3DYQevX1KXRzLbuR3aYkIWYy_4KSq8U/edit?usp=sharing)
