@@ -9,3 +9,12 @@ Models to try
 3. YoloNas
 4. (Reach) transformers
 
+
+## Clone this repo:
+Open Terminal (Mac/Linux/WSL) or Git Bash (Windows) and type this:
+>```
+> git clone git@github.com:NEURoboticsClub/noaa-ocean-challenge.git
+>```
+
+## Install dependencies:
+Open terminal and navigate to the repo you just cloned (`cd ~/neu-underwater-robotics`).If you don't want to use a virtual environment, run `pip install -r requirements.txt` to install all needed dependencies.
