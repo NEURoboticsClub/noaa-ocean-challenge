@@ -6,6 +6,11 @@ from ultralytics import YOLO
 
 
 class FrameAnnotator():
+    """
+    Class to handle the backend of annotating images. 
+    Has hooks to allow for direct command line use.
+    model_path (String): the path to the name of the model being used
+    """
     def __init__(self, model_path):
         self.frames = []
         self.annotated_frames = []
@@ -27,10 +32,7 @@ class FrameAnnotator():
             more_frames, img = video.read()
 
         video.release()
-
         return self.frames
-        # cv2.imshow('frame', self.frames[19])
-        # cv2.waitKey(0)
 
     def annotate_frames(self):
         """
@@ -43,6 +45,11 @@ class FrameAnnotator():
             self.annotated_frames.append(self.annotate_single_frame(frame)[0])
 
     def annotate_single_frame(self, frame):
+        """
+        Predicts with the model all boundary boxes for a given frame.
+        Returns a tuple of the image and the boundary boxes.
+        frame (np.ndarray): the frame to operate on.
+        """
         # classes 0 is only sea stars
         output = self.model.predict(conf=0.25, source=frame, classes=0)
         predictions = output[0].boxes.xyxy
@@ -58,11 +65,17 @@ class FrameAnnotator():
         return (annotated_frame, predictions)
 
     def reconstruct_video(self, filename, annotated_frames):
+        """
+        Reconstructs the video from frames and saves it.
+        filename (String): the path for the file
+        annotated_frames (Optional[List[PIL.Image]]): the frames to save to a video
+        """
         if annotated_frames is None:
             annotated_frames = self.annotated_frames
         if len(annotated_frames) == 0:
             raise Exception("No frames annotated")
         size = (self.frames[0].shape[1], self.frames[0].shape[0])
+        # the correct fourcc needs to be selected. We are currently set on mp4 files.
         writer = cv2.VideoWriter(filename, cv2.VideoWriter_fourcc(*"mp4v"),
                                  self.frame_rate, size)
 
@@ -71,11 +84,9 @@ class FrameAnnotator():
 
         writer.release()
 
-    def generate_csv(self):
-        if len(self.frames) == 0:
-            raise Exception("No frames loaded")
-
-
+"""
+To uncomment for direct command line use.
+"""
 # fa = FrameAnnotator('yolov10_starfish_model.pt')
 
 # fa.video_to_frames("seafloor_footage.mp4")

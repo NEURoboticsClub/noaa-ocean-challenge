@@ -9,11 +9,16 @@ import pandas as pd
 
 
 class GUIApp:
+    """
+    Application for managing the loading annotating and saving of videos to be modified.
+    """
+
     def __init__(self):
         menu_def = [['&File', ['&Open', '&Save', '---', 'Properties', 'E&xit']],
                     ['&Edit', ['Paste', ['Special', 'Normal', ], 'Undo'], ],
                     ['&Help', '&About...']]
         font = ("Avenir", 14)
+        # cache the loaded model so that we don't waste energy later
         self.model_dict = {'YOLO Base': FrameAnnotator('yolo_v8_model_base.pt'),
                            'YOLO Multi-Class': FrameAnnotator('yolo_v8_2class_model.pt'),
                            'YOLO Resilient': FrameAnnotator('yolo_v8_resilient_2class.pt')}
@@ -44,16 +49,23 @@ class GUIApp:
         self.window = sg.Window('NUWave Sea Star Annotator', self.layout)
         self.breakout = False
         self.fa = self.model_dict['YOLO Base']
+        # values for saving down the line
         self.frames = []
         self.annotated_frames = []
         self.prediction_boxes = np.empty((0, 4))
         self.pred_lengths = []
+        # GUI information booleans
         self.touching_slider = False
         self.file_browsing = True
 
     def update(self):
+        """
+        The main loop that gets called to update the window.
+        All computationally expensive tasks occur in seperate threads for speed.
+        """
         event, values = self.window.Read()
         print(event)
+        # threads each call a method asynchronously to run their task
         annotation_thr = threading.Thread(
             target=self.annotate_frames_gui, args=(), kwargs={})
         browsing_thr = threading.Thread(target=self.browse, args=(), kwargs={})
@@ -61,6 +73,7 @@ class GUIApp:
             target=self.save_annotated_video, args=(), kwargs={})
         sheet_saving_thr = threading.Thread(
             target=self.save_xlsx, args=(), kwargs={})
+        # Event hooks to hear button callbacks and start tasks
         if event is None or event == 'Exit':
             self.breakout = True
         if event == "browse_input":
@@ -94,9 +107,16 @@ class GUIApp:
                 sheet_saving_thr.start()
 
     def annotate_frames_gui(self):
+        """
+        Loads in the frams from the video and pops up their annotation.
+        Also caches the frames as needed.
+        """
         self.window['info'].update("Loading Frames")
+        # allow buffer time for the GUI to update the info message
         time.sleep(0.5)
+        # selects the correct model
         self.fa = self.model_dict[self.window['selector'].get()]
+        # trys for a valid video path but doesn't crash if not
         try:
             self.frames = self.fa.video_to_frames(
                 self.window['input_path'].get())
@@ -105,37 +125,52 @@ class GUIApp:
         finally:
             self.window['info'].update("Annotating Frames")
             self.annotated_frames = []
+            # you need this empty (0, 4) or you will create inhomogenous numpy arrays with append
             self.prediction_boxes = np.empty((0, 4))
             self.window['progress_bar'].update(
                 current_count=0, max=len(self.frames))
             for i in range(len(self.frames)):
+                # gets and annotates a frame
                 frame = self.frames[i]
                 curr_frame, curr_pred = self.fa.annotate_single_frame(frame)
+                # saves relevant data
                 self.annotated_frames.append(curr_frame)
                 self.prediction_boxes = np.append(
                     self.prediction_boxes, curr_pred, axis=0)
                 self.pred_lengths.append(len(curr_pred))
+
+                # updates the GUI accordingly
                 self.window['progress_bar'].update(current_count=i+1)
                 self.window['slider'].update(
                     range=(0, len(self.annotated_frames)))
-
+                # if the playback is paused we don't touch the canvas or slider position
                 if not self.touching_slider:
                     self.window['canvas'].update(
                         data=self.frame_update_data(i))
                     self.window['slider'].update(value=i+1)
 
     def save_annotated_video(self):
+        """
+        Saves the video to the specified filepath.
+        """
         self.window['info'].update("Saving Video")
+        # This handles people not knowing whether to put .mp4 at the end by dealing with both
         filename = self.window['output_file'].get()
         if not filename.endswith(".mp4"):
             filename += ".mp4"
+        # logic is in our frame annotator
         self.fa.reconstruct_video(self.window['output_path'].get()
                                   + "/" + filename,
                                   self.annotated_frames)
         self.window['info'].update("Saving Complete")
 
     def save_xlsx(self):
+        """
+        Saves the sheet to the specified filepath.
+        """
+        # aliasing so that the modifications don't impact ground truth
         np_pred = self.prediction_boxes
+        # generate a column with all of the timestamps
         name_column = np.array([])
         for i in range(len(self.pred_lengths)):
             seconds = i / self.fa.frame_rate % 60
@@ -146,7 +181,6 @@ class GUIApp:
                                     + padding_minutes + f"{minutes}:"
                                     + padding_seconds + f"{seconds:.3f}"]
                                     * self.pred_lengths[i]))
-
         np_pred = np.append(name_column.reshape(
             (len(name_column), 1)), np_pred, axis=1)
         # to swap from YOLONAS output to specified ouput columns
@@ -154,9 +188,11 @@ class GUIApp:
         np_pred[:, [3, 4]] = np_pred[:, [4, 3]]
         labels = np.array(["Current Frame", "X Bound, Left",
                           "X Bound, Right", "Y Bound, Upper", "Y Bound, Lower"])
+        # save to a pandas dataframe for exporting. could improve with column expanding
         df = pd.DataFrame(np_pred, columns=labels)
         self.window['info'].update("Saving Sheet")
         filename = self.window['output_file'].get()
+        # This handles people not knowing whether to put .xlsx at the end by dealing with both
         if not filename.endswith(".xlsx"):
             filename += ".xlsx"
         df.to_excel(self.window['output_path'].get() +
@@ -164,6 +200,10 @@ class GUIApp:
         self.window['info'].update("Saving Complete")
 
     def frame_update_data(self, index):
+        """
+        Updates the canvas with a specified frame from an index.
+        index (int): the index in self.annotated_frames to display
+        """
         return ImageTk.PhotoImage(
             Image.fromarray(cv2.cvtColor(np.array(self.annotated_frames[index]
                                                   .resize(self.image_size, Image.NEAREST)
@@ -171,6 +211,9 @@ class GUIApp:
                                          cv2.COLOR_RGB2BGR)))
 
     def browse(self):
+        """
+        Handles our file browsing actions. Uses a boolean to reduce thread count
+        """
         if self.file_browsing:
             # Open a file dialog and get the file path
             video_path = None
