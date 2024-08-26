@@ -18,3 +18,9 @@ Open Terminal (Mac/Linux/WSL) or Git Bash (Windows) and type this:
 
 ## Install dependencies:
 Open terminal and navigate to the repo you just cloned (`cd ~/noaa-ocean-challenge`).If you don't want to use a virtual environment, run `pip install -r requirements.txt` to install all needed dependencies.
+
+## Running the GUI
+Once in the repo, in the terminal run the following command:
+>```
+> python3 application.py
+>```
